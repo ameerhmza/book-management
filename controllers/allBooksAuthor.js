@@ -6,9 +6,9 @@ const router = express.Router();
 import Book from '../models/book.js';
 
 
-router.get('/:id', async (req, res) => {
+router.get('/:authorId', async (req, res) => {
     try{
-     const book=await Book.find({author:req.params.id})
+     const book=await Book.find({author:req.params.authorId})
      .populate('author',('name -_id')).populate('genre','name -_id')
      .select('-_id -isPublished -__v');
 

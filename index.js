@@ -26,8 +26,8 @@ app.use('/author',authorController);
 app.use('/book',bookController);
 
 // additional apis
-app.use('/book/author',booksOfAuthor);
-app.use('/book/genre',booksOfSpecificGenre);
+app.use('/book/author/',booksOfAuthor);
+app.use('/book/genre/',booksOfSpecificGenre);
 // server
 const PORT=process.env.PORT;
 app.listen(PORT,()=>{console.log(`Listening on port ${PORT} ....`)});
